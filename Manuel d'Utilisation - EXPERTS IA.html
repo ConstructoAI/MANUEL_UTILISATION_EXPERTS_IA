@@ -1,0 +1,1723 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manuel d'Utilisation - EXPERTS IA</title>
+    <style>
+        :root {
+            /* === COULEURS PRINCIPALES === */
+            --primary-color: #3B82F6;
+            --primary-color-light: #93C5FD;
+            --primary-color-dark: #2563EB;
+            --primary-color-darker: #1D4ED8;
+            --primary-color-darkest: #1E40AF;
+            
+            /* === COULEURS SECONDAIRES === */
+            --secondary-blue: #3B82F6;
+            --secondary-blue-light: #60A5FA;
+            --secondary-blue-dark: #1D4ED8;
+            
+            --secondary-purple: #8B5CF6;
+            --secondary-purple-light: #A78BFA;
+            --secondary-purple-dark: #7C3AED;
+            
+            --secondary-orange: #F59E0B;
+            --secondary-orange-light: #FCD34D;
+            --secondary-orange-dark: #D97706;
+            
+            /* === COULEURS SÉMANTIQUES === */
+            --success-color: #22C55E;
+            --success-light: #86EFAC;
+            --success-dark: #16A34A;
+            --success-bg: #DCFCE7;
+            
+            --warning-color: #F59E0B;
+            --warning-light: #FCD34D;
+            --warning-dark: #D97706;
+            --warning-bg: #FEF3C7;
+            
+            --error-color: #EF4444;
+            --error-light: #F87171;
+            --error-dark: #DC2626;
+            --error-bg: #FEE2E2;
+            
+            --info-color: #06B6D4;
+            --info-light: #67E8F9;
+            --info-dark: #0891B2;
+            --info-bg: #CFFAFE;
+            
+            /* === COULEURS NEUTRES === */
+            --text-color: #1F2937;
+            --text-color-light: #6B7280;
+            --text-color-lighter: #9CA3AF;
+            --text-color-dark: #111827;
+            
+            --background-color: #FAFBFF;
+            --background-secondary: #F8FAFF;
+            --background-white: #FFFFFF;
+            --background-gray: #F5F8FF;
+            
+            --border-color: #E2E8F0;
+            --border-color-light: #F1F5F9;
+            --border-color-dark: #CBD5E1;
+            
+            /* === DÉGRADÉS THÉMATIQUES === */
+            --gradient-primary: linear-gradient(135deg, #3B82F6 0%, #1F2937 100%);
+            --gradient-primary-light: linear-gradient(135deg, #DBEAFE 0%, #FFFFFF 100%);
+            --gradient-primary-soft: linear-gradient(135deg, #F5F8FF 0%, #DBEAFE 100%);
+            
+            --gradient-blue: linear-gradient(135deg, #3B82F6 0%, #1D4ED8 100%);
+            --gradient-blue-light: linear-gradient(135deg, #DBEAFE 0%, #FFFFFF 100%);
+            
+            --gradient-glass: linear-gradient(135deg, 
+                rgba(255,255,255,0.4) 0%, 
+                rgba(255,255,255,0.1) 50%, 
+                rgba(255,255,255,0.05) 100%);
+            
+            /* === EFFETS LUSTRÉS AVANCÉS === */
+            --lustrous-primary: linear-gradient(145deg, 
+                rgba(255,255,255,0.4) 0%, 
+                var(--primary-color) 20%, 
+                var(--primary-color-dark) 80%, 
+                rgba(0,0,0,0.2) 100%);
+                
+            --lustrous-blue: linear-gradient(145deg, 
+                rgba(255,255,255,0.5) 0%, 
+                var(--secondary-blue) 20%, 
+                var(--secondary-blue-dark) 80%, 
+                rgba(0,0,0,0.2) 100%);
+            
+            /* === OMBRES === */
+            --shadow-xs: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+            --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+            
+            --shadow-primary: 0 4px 14px 0 rgba(59, 130, 246, 0.2);
+            --shadow-blue: 0 4px 14px 0 rgba(59, 130, 246, 0.2);
+            
+            /* === PROPRIÉTÉS TECHNIQUES === */
+            --animation-speed: 0.3s;
+            --animation-speed-fast: 0.15s;
+            --animation-speed-slow: 0.5s;
+            
+            --border-radius-xs: 0.25rem;
+            --border-radius-sm: 0.375rem;
+            --border-radius-md: 0.5rem;
+            --border-radius-lg: 0.75rem;
+            --border-radius-xl: 1rem;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* === ANIMATIONS AVANCÉES === */
+        @keyframes shimmer {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+
+        @keyframes breathe {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.02); }
+        }
+
+        @keyframes glow {
+            0%, 100% { box-shadow: 0 0 5px rgba(59, 130, 246, 0.5); }
+            50% { box-shadow: 0 0 20px rgba(59, 130, 246, 0.8), 0 0 30px rgba(59, 130, 246, 0.4); }
+        }
+
+        @keyframes fadeInUp {
+            from { 
+                opacity: 0; 
+                transform: translateY(30px); 
+            }
+            to { 
+                opacity: 1; 
+                transform: translateY(0); 
+            }
+        }
+
+        @keyframes slideInRight {
+            from { 
+                opacity: 0; 
+                transform: translateX(30px); 
+            }
+            to { 
+                opacity: 1; 
+                transform: translateX(0); 
+            }
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background: var(--background-color);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Layout */
+        .container {
+            display: flex;
+            min-height: 100vh;
+        }
+
+        /* Sidebar Navigation */
+        .sidebar {
+            width: 300px;
+            background-color: var(--card-background);
+            border-right: 1px solid var(--border-color);
+            padding: 2rem;
+            position: fixed;
+            height: 100vh;
+            overflow-y: auto;
+            box-shadow: 2px 0 10px rgba(0,0,0,0.05);
+        }
+
+        .sidebar h2 {
+            color: var(--primary-color);
+            margin-bottom: 2rem;
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .sidebar h2::before {
+            content: "🤖";
+            font-size: 1.8rem;
+        }
+
+        .nav-section {
+            margin-bottom: 2rem;
+        }
+
+        .nav-section h3 {
+            color: var(--secondary-color);
+            font-size: 0.875rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.5rem;
+            padding: 0.5rem 0;
+        }
+
+        .nav-link {
+            display: block;
+            padding: 0.75rem 1rem;
+            color: var(--text-secondary);
+            text-decoration: none;
+            border-radius: 0.5rem;
+            transition: all 0.3s ease;
+            margin-bottom: 0.25rem;
+        }
+
+        .nav-link:hover {
+            background-color: var(--primary-light);
+            background-color: rgba(0, 169, 113, 0.1);
+            color: var(--primary-color);
+            transform: translateX(5px);
+        }
+
+        .nav-link.active {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        /* Main Content */
+        .main-content {
+            margin-left: 300px;
+            flex: 1;
+            padding: 3rem;
+            max-width: 1200px;
+            margin-right: auto;
+        }
+
+        /* Typography */
+        h1 {
+            color: var(--secondary-color);
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            padding-bottom: 1rem;
+            border-bottom: 3px solid var(--primary-color);
+        }
+
+        h2 {
+            color: var(--secondary-color);
+            font-size: 2rem;
+            margin-top: 3rem;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        h3 {
+            color: var(--secondary-color);
+            font-size: 1.5rem;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        h4 {
+            color: var(--primary-color);
+            font-size: 1.25rem;
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+        p {
+            margin-bottom: 1rem;
+            line-height: 1.8;
+            color: var(--text-secondary);
+        }
+
+        /* === CARTES AMÉLIORÉES AVEC EFFETS LUSTRÉS === */
+        .card {
+            background: var(--gradient-primary-soft);
+            border-radius: var(--border-radius-lg);
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: var(--shadow-md);
+            border-left: 4px solid var(--primary-color);
+            transition: all var(--animation-speed) ease;
+            position: relative;
+            overflow: hidden;
+            backdrop-filter: blur(10px);
+        }
+
+        .card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: var(--gradient-primary);
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-xl), var(--shadow-primary);
+            background: var(--gradient-glass);
+        }
+
+        /* Feature Grid */
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .feature-card {
+            background: var(--gradient-glass);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: var(--border-radius-xl);
+            padding: 2rem;
+            transition: all var(--animation-speed) ease;
+            box-shadow: var(--shadow-xl);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gradient-blue);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-8px) rotate(1deg);
+            box-shadow: var(--shadow-xl), 0 25px 50px rgba(0, 0, 0, 0.15);
+            border-color: var(--primary-color);
+            background: var(--gradient-blue-light);
+        }
+
+        .feature-card h4 {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .feature-card .icon {
+            font-size: 1.5rem;
+        }
+
+        /* Lists */
+        ul, ol {
+            margin-left: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+            color: var(--text-secondary);
+        }
+
+        /* Code Blocks */
+        pre {
+            background-color: #1F2937;
+            color: #E5E7EB;
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            overflow-x: auto;
+            margin-bottom: 1.5rem;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        code {
+            background-color: rgba(31, 41, 55, 0.1);
+            padding: 0.25rem 0.5rem;
+            border-radius: 0.25rem;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+            color: var(--primary-color);
+        }
+
+        /* Tables */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 1.5rem;
+            background-color: var(--card-background);
+            border-radius: 0.5rem;
+            overflow: hidden;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+
+        th {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 1rem;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        td {
+            padding: 1rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        tr:hover {
+            background-color: rgba(0, 169, 113, 0.05);
+        }
+
+        /* Alerts */
+        .alert {
+            padding: 1rem 1.5rem;
+            border-radius: 0.5rem;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+
+        .alert-info {
+            background-color: rgba(59, 130, 246, 0.1);
+            border-left: 4px solid var(--info-color);
+        }
+
+        .alert-success {
+            background-color: rgba(16, 185, 129, 0.1);
+            border-left: 4px solid var(--success-color);
+        }
+
+        .alert-warning {
+            background-color: rgba(245, 158, 11, 0.1);
+            border-left: 4px solid var(--warning-color);
+        }
+
+        .alert-danger {
+            background-color: rgba(239, 68, 68, 0.1);
+            border-left: 4px solid var(--danger-color);
+        }
+
+        .alert-icon {
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        /* === BOUTONS LUSTRÉS AMÉLIORÉS === */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.75rem 1.5rem;
+            border-radius: var(--border-radius-md);
+            text-decoration: none;
+            font-weight: 600;
+            font-family: 'Inter', sans-serif;
+            transition: all var(--animation-speed) ease;
+            cursor: pointer;
+            border: none;
+            font-size: 1rem;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 
+                var(--shadow-primary),
+                inset 0 1px 0 rgba(255, 255, 255, 0.3),
+                inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+        }
+
+        /* Effet shimmer pour tous les boutons */
+        .btn::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, 
+                transparent 0%, 
+                rgba(255, 255, 255, 0.4) 50%, 
+                transparent 100%);
+            transition: left var(--animation-speed-slow) ease;
+            z-index: 1;
+        }
+
+        .btn:hover::before {
+            left: 100%;
+        }
+
+        .btn-primary {
+            background: var(--lustrous-primary);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: linear-gradient(145deg, 
+                rgba(255,255,255,0.6) 0%, 
+                var(--primary-color-light) 20%, 
+                var(--primary-color-dark) 80%, 
+                rgba(0,0,0,0.3) 100%);
+            transform: translateY(-3px);
+            box-shadow: 
+                var(--shadow-lg),
+                var(--shadow-primary),
+                inset 0 2px 0 rgba(255, 255, 255, 0.4),
+                inset 0 -2px 0 rgba(0, 0, 0, 0.15);
+        }
+
+        .btn-secondary {
+            background: var(--lustrous-blue);
+            color: white;
+        }
+
+        .btn-secondary:hover {
+            background: linear-gradient(145deg, 
+                rgba(255,255,255,0.6) 0%, 
+                var(--secondary-blue-light) 20%, 
+                var(--secondary-blue-dark) 80%, 
+                rgba(0,0,0,0.3) 100%);
+            transform: translateY(-3px);
+            box-shadow: 
+                var(--shadow-lg),
+                var(--shadow-blue),
+                inset 0 2px 0 rgba(255, 255, 255, 0.4),
+                inset 0 -2px 0 rgba(0, 0, 0, 0.15);
+        }
+
+        .btn:active {
+            transform: translateY(-1px);
+            box-shadow: 
+                var(--shadow-sm),
+                inset 0 -1px 0 rgba(255, 255, 255, 0.2),
+                inset 0 1px 2px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Workflow Diagram */
+        .workflow {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin: 2rem 0;
+            padding: 2rem;
+            background-color: var(--card-background);
+            border-radius: 0.75rem;
+            overflow-x: auto;
+        }
+
+        .workflow-step {
+            text-align: center;
+            flex: 1;
+            position: relative;
+            padding: 1rem;
+        }
+
+        .workflow-step::after {
+            content: '→';
+            position: absolute;
+            right: -1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.5rem;
+            color: var(--primary-color);
+        }
+
+        .workflow-step:last-child::after {
+            display: none;
+        }
+
+        .workflow-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--lustrous-primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 0.5rem;
+            font-size: 1.5rem;
+            font-weight: 700;
+            box-shadow: 
+                var(--shadow-primary),
+                inset 0 2px 0 rgba(255, 255, 255, 0.4),
+                inset 0 -2px 0 rgba(0, 0, 0, 0.2);
+            transition: all var(--animation-speed) ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .workflow-icon::before {
+            content: "";
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, 
+                transparent 30%, 
+                rgba(255, 255, 255, 0.3) 50%, 
+                transparent 70%);
+            animation: shimmer 3s infinite;
+        }
+
+        .workflow-step:hover .workflow-icon {
+            animation: breathe 2s ease-in-out infinite;
+            box-shadow: 
+                var(--shadow-lg),
+                var(--shadow-primary),
+                0 0 20px rgba(59, 130, 246, 0.4);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .sidebar {
+                transform: translateX(-100%);
+                transition: transform 0.3s ease;
+            }
+
+            .sidebar.active {
+                transform: translateX(0);
+            }
+
+            .main-content {
+                margin-left: 0;
+                padding: 1.5rem;
+            }
+
+            .feature-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .workflow {
+                flex-direction: column;
+            }
+
+            .workflow-step::after {
+                display: none;
+            }
+        }
+
+        /* Print Styles */
+        @media print {
+            .sidebar {
+                display: none;
+            }
+
+            .main-content {
+                margin-left: 0;
+            }
+
+            .card {
+                break-inside: avoid;
+            }
+        }
+
+        /* Search Box */
+        .search-box {
+            margin-bottom: 2rem;
+            position: relative;
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 0.75rem 1rem 0.75rem 3rem;
+            border: 2px solid var(--border-color);
+            border-radius: 0.5rem;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .search-box input:focus {
+            outline: none;
+            border-color: var(--primary-color);
+        }
+
+        .search-box::before {
+            content: "🔍";
+            position: absolute;
+            left: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.2rem;
+        }
+
+        /* Sticky Header */
+        .sticky-header {
+            position: sticky;
+            top: 0;
+            background-color: var(--card-background);
+            z-index: 10;
+            padding: 1rem 0;
+            margin-bottom: 2rem;
+            border-bottom: 2px solid var(--border-color);
+        }
+
+        /* === PROGRESS BAR LUSTRÉE === */
+        .progress-bar {
+            background: var(--background-gray);
+            border-radius: var(--border-radius-md);
+            overflow: hidden;
+            height: 8px;
+            position: relative;
+            margin-bottom: 0.5rem;
+        }
+
+        .progress-fill {
+            background: var(--gradient-primary);
+            height: 100%;
+            border-radius: var(--border-radius-md);
+            transition: width var(--animation-speed-slow) ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .progress-fill::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(90deg, 
+                transparent 0%, 
+                rgba(255, 255, 255, 0.3) 50%, 
+                transparent 100%);
+            animation: shimmer 2s infinite;
+        }
+
+        /* Tabs */
+        .tabs {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 2rem;
+            border-bottom: 2px solid var(--border-color);
+        }
+
+        .tab {
+            padding: 0.75rem 1.5rem;
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+            font-weight: 600;
+            color: var(--text-secondary);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .tab:hover {
+            color: var(--primary-color);
+        }
+
+        .tab.active {
+            color: var(--primary-color);
+        }
+
+        .tab.active::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background-color: var(--primary-color);
+        }
+
+        /* Tooltip */
+        .tooltip {
+            position: relative;
+            display: inline-block;
+            cursor: help;
+        }
+
+        .tooltip .tooltiptext {
+            visibility: hidden;
+            width: 200px;
+            background-color: var(--secondary-color);
+            color: white;
+            text-align: center;
+            border-radius: 0.5rem;
+            padding: 0.5rem;
+            position: absolute;
+            z-index: 1;
+            bottom: 125%;
+            left: 50%;
+            margin-left: -100px;
+            opacity: 0;
+            transition: opacity 0.3s;
+            font-size: 0.875rem;
+        }
+
+        .tooltip:hover .tooltiptext {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        /* Styles spécifiques pour les sections d'experts */
+        .expert-category {
+            margin-bottom: 3rem;
+        }
+
+        .expert-item {
+            background: rgba(255, 255, 255, 0.8);
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius-md);
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            transition: all var(--animation-speed) ease;
+        }
+
+        .expert-item:hover {
+            transform: translateX(5px);
+            box-shadow: var(--shadow-md);
+            border-color: var(--primary-color);
+        }
+
+        .expert-item h4 {
+            margin-top: 0;
+            color: var(--primary-color);
+        }
+
+        .expert-specialties {
+            color: var(--text-color-light);
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .expert-example {
+            background: var(--background-gray);
+            padding: 0.75rem;
+            border-radius: var(--border-radius-sm);
+            font-style: italic;
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Sidebar Navigation -->
+    <nav class="sidebar" id="sidebar">
+        <h2>EXPERTS IA</h2>
+        
+        <div class="search-box">
+            <input type="text" placeholder="Rechercher..." id="searchInput">
+        </div>
+
+        <div class="nav-section">
+            <h3>Démarrage</h3>
+            <a href="#introduction" class="nav-link">Introduction</a>
+            <a href="#demarrage-rapide" class="nav-link">Démarrage Rapide</a>
+            <a href="#experts-service" class="nav-link">Les 60+ Experts</a>
+        </div>
+
+        <div class="nav-section">
+            <h3>Utilisation</h3>
+            <a href="#interface-chat" class="nav-link">Interface de Chat</a>
+            <a href="#analyse-documents" class="nav-link">Analyse de Documents</a>
+            <a href="#recherche-web" class="nav-link">Recherche Web</a>
+            <a href="#gestion-conversations" class="nav-link">Gestion Conversations</a>
+        </div>
+
+        <div class="nav-section">
+            <h3>Cas d'Usage</h3>
+            <a href="#cas-metier" class="nav-link">Cas par Métier</a>
+            <a href="#optimisation" class="nav-link">Conseils Optimisation</a>
+            <a href="#fonctions-avancees" class="nav-link">Fonctions Avancées</a>
+        </div>
+
+        <div class="nav-section">
+            <h3>Support</h3>
+            <a href="#resolution-problemes" class="nav-link">Résolution Problèmes</a>
+            <a href="#metriques" class="nav-link">Métriques et Suivi</a>
+            <a href="#support-communaute" class="nav-link">Support et Communauté</a>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <!-- Introduction -->
+        <section id="introduction">
+            <h1>📖 Manuel d'Utilisation - EXPERTS IA</h1>
+            
+            <div class="alert alert-info">
+                <span class="alert-icon">ℹ️</span>
+                <div>
+                    <strong>Bienvenue dans EXPERTS IA</strong><br>
+                    L'Assistant IA le Plus Avancé de la Construction Québécoise - 60+ experts virtuels spécialisés dans tous les domaines de la construction.
+                </div>
+            </div>
+
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h4><span class="icon">👥</span> 60+ Experts Virtuels</h4>
+                    <p>Spécialistes dans tous les domaines de la construction québécoise</p>
+                </div>
+                <div class="feature-card">
+                    <h4><span class="icon">💬</span> IA Claude d'Anthropic</h4>
+                    <p>Intelligence artificielle de pointe pour réponses expertes</p>
+                </div>
+                <div class="feature-card">
+                    <h4><span class="icon">📄</span> Analyse de Documents</h4>
+                    <p>Plans, devis, photos analysés instantanément</p>
+                </div>
+                <div class="feature-card">
+                    <h4><span class="icon">🔍</span> Recherche Web Intégrée</h4>
+                    <p>Informations actuelles et prix du marché québécois</p>
+                </div>
+            </div>
+
+            <h3>🎯 Fonctionnalités Clés</h3>
+            <ul>
+                <li><strong>Expertise instantanée</strong> dans tous les corps de métier</li>
+                <li><strong>Connaissances spécialisées</strong> du marché québécois</li>
+                <li><strong>Analyse de documents</strong> (plans, devis, photos)</li>
+                <li><strong>Recherche web</strong> pour informations actuelles</li>
+                <li><strong>Historique complet</strong> de vos consultations</li>
+                <li><strong>60+ experts virtuels</strong> spécialisés</li>
+                <li><strong>IA Claude d'Anthropic</strong> dernière génération</li>
+                <li><strong>Interface intuitive</strong> et responsive</li>
+            </ul>
+
+            <h3>💻 Configuration Requise</h3>
+            <div class="card">
+                <table>
+                    <tr>
+                        <th>Composant</th>
+                        <th>Minimum</th>
+                        <th>Recommandé</th>
+                    </tr>
+                    <tr>
+                        <td>Navigateur</td>
+                        <td>Chrome 90+, Firefox 88+, Edge 90+</td>
+                        <td>Dernières versions</td>
+                    </tr>
+                    <tr>
+                        <td>Résolution</td>
+                        <td>1280x720</td>
+                        <td>1920x1080</td>
+                    </tr>
+                    <tr>
+                        <td>Connexion Internet</td>
+                        <td>Requise pour l'Assistant IA</td>
+                        <td>Haut débit</td>
+                    </tr>
+                    <tr>
+                        <td>Système</td>
+                        <td>Windows 10, macOS 10.14, Linux</td>
+                        <td>Windows 11, macOS 12+</td>
+                    </tr>
+                </table>
+            </div>
+        </section>
+
+        <!-- Démarrage Rapide -->
+        <section id="demarrage-rapide">
+            <h2>🚀 Démarrage Rapide</h2>
+
+            <h3>Accéder à l'application</h3>
+            <div class="card">
+                <ol>
+                    <li><strong>Rendez-vous sur votre URL EXPERTS IA</strong> (fournie lors du déploiement)</li>
+                    <li><strong>L'application se charge automatiquement</strong></li>
+                    <li><strong>Aucune inscription requise</strong> - utilisez immédiatement !</li>
+                </ol>
+            </div>
+
+            <h3>Interface principale</h3>
+            
+            <div class="card">
+                <pre>┌─────────────────┬─────────────────────────────────┐
+│                 │                                 │
+│   SIDEBAR       │        ZONE DE CHAT             │
+│                 │                                 │
+│ • Sélection     │ • Messages conversation         │
+│   Expert        │ • Zone de saisie               │
+│ • Historique    │ • Boutons d'action             │
+│ • Upload docs   │ • Export/Partage               │
+│                 │                                 │
+└─────────────────┴─────────────────────────────────┘</pre>
+            </div>
+
+            <div class="workflow">
+                <div class="workflow-step">
+                    <div class="workflow-icon">1</div>
+                    <h4>Sélectionner Expert</h4>
+                    <p>Choisissez parmi 60+ spécialistes</p>
+                </div>
+                <div class="workflow-step">
+                    <div class="workflow-icon">2</div>
+                    <h4>Poser Question</h4>
+                    <p>Tapez votre demande naturellement</p>
+                </div>
+                <div class="workflow-step">
+                    <div class="workflow-icon">3</div>
+                    <h4>Recevoir Expertise</h4>
+                    <p>Réponse détaillée et professionnelle</p>
+                </div>
+            </div>
+
+            <div class="alert alert-success">
+                <span class="alert-icon">✅</span>
+                <div>
+                    <strong>Prêt à utiliser !</strong><br>
+                    Aucune configuration requise. Sélectionnez simplement votre expert et commencez votre consultation.
+                </div>
+            </div>
+        </section>
+
+        <!-- Les 60+ Experts -->
+        <section id="experts-service">
+            <h2>👥 Les 60+ Experts à Votre Service</h2>
+
+            <div class="expert-category">
+                <h3>🏗️ EXPERTS PRINCIPAUX (Construction)</h3>
+                
+                <div class="expert-item">
+                    <h4>Entrepreneur Général (40 ans d'expérience)</h4>
+                    <div class="expert-specialties"><strong>Spécialités :</strong> Gestion de projet, estimations, coordination</div>
+                    <div class="expert-specialties"><strong>Utilisez pour :</strong> Budgets globaux, planning, gestion d'équipes</div>
+                    <div class="expert-example"><strong>Exemple :</strong> "Quel est le coût total pour une maison 2000 pi² à Laval ?"</div>
+                </div>
+
+                <div class="expert-item">
+                    <h4>Architecte OAQ (30 ans d'expérience)</h4>
+                    <div class="expert-specialties"><strong>Spécialités :</strong> Design, conformité, efficacité énergétique</div>
+                    <div class="expert-specialties"><strong>Utilisez pour :</strong> Plans, permis, optimisation espaces</div>
+                    <div class="expert-example"><strong>Exemple :</strong> "Comment optimiser l'éclairage naturel dans un salon ?"</div>
+                </div>
+
+                <div class="expert-item">
+                    <h4>Ingénieur Structure (35 ans d'expérience)</h4>
+                    <div class="expert-specialties"><strong>Spécialités :</strong> Calculs, dimensionnement, normes sismiques</div>
+                    <div class="expert-specialties"><strong>Utilisez pour :</strong> Poutres, colonnes, fondations</div>
+                    <div class="expert-example"><strong>Exemple :</strong> "Quelle poutre pour une portée de 24 pieds en résidentiel ?"</div>
+                </div>
+            </div>
+
+            <div class="expert-category">
+                <h3>⚡ EXPERTS TECHNIQUES (Systèmes)</h3>
+                
+                <div class="expert-item">
+                    <h4>Électricien CMEQ (35 ans d'expérience)</h4>
+                    <div class="expert-specialties"><strong>Spécialités :</strong> Installation, code électrique, panneau</div>
+                    <div class="expert-specialties"><strong>Utilisez pour :</strong> Câblage, ampérage, conformité</div>
+                    <div class="expert-example"><strong>Exemple :</strong> "Quel ampérage pour une maison avec thermopompe ?"</div>
+                </div>
+
+                <div class="expert-item">
+                    <h4>Plombier CMMTQ (35 ans d'expérience)</h4>
+                    <div class="expert-specialties"><strong>Spécialités :</strong> Plomberie, chauffage, ventilation</div>
+                    <div class="expert-specialties"><strong>Utilisez pour :</strong> Tuyauterie, chauffe-eau, drainage</div>
+                    <div class="expert-example"><strong>Exemple :</strong> "Comment dimensionner un drain français ?"</div>
+                </div>
+
+                <div class="expert-item">
+                    <h4>Expert CVC/HVAC (30 ans d'expérience)</h4>
+                    <div class="expert-specialties"><strong>Spécialités :</strong> Chauffage, ventilation, climatisation</div>
+                    <div class="expert-specialties"><strong>Utilisez pour :</strong> Systèmes HVAC, efficacité énergétique</div>
+                    <div class="expert-example"><strong>Exemple :</strong> "Quel système de chauffage pour une maison passive ?"</div>
+                </div>
+            </div>
+
+            <div class="expert-category">
+                <h3>🧱 EXPERTS MATÉRIAUX (Spécialistes)</h3>
+                
+                <div class="expert-item">
+                    <h4>Maçon Spécialisé (25 ans d'expérience)</h4>
+                    <div class="expert-specialties"><strong>Spécialités :</strong> Béton, pierre, briques, techniques traditionnelles</div>
+                    <div class="expert-specialties"><strong>Utilisez pour :</strong> Fondations, murs, finitions maçonnerie</div>
+                    <div class="expert-example"><strong>Exemple :</strong> "Quel type de mortier pour mur de pierres extérieur ?"</div>
+                </div>
+
+                <div class="expert-item">
+                    <h4>Expert Toiture (30 ans d'expérience)</h4>
+                    <div class="expert-specialties"><strong>Spécialités :</strong> Tous systèmes, étanchéité, climat nordique</div>
+                    <div class="expert-specialties"><strong>Utilisez pour :</strong> Couverture, isolation, ventilation toit</div>
+                    <div class="expert-example"><strong>Exemple :</strong> "Comment ventiler une toiture cathédrale ?"</div>
+                </div>
+
+                <div class="expert-item">
+                    <h4>Spécialiste Portes & Fenêtres (40 ans d'expérience)</h4>
+                    <div class="expert-specialties"><strong>Spécialités :</strong> 500+ produits, installations certifiées</div>
+                    <div class="expert-specialties"><strong>Utilisez pour :</strong> Choix fenêtres, installation, performance</div>
+                    <div class="expert-example"><strong>Exemple :</strong> "Quelles fenêtres triple vitrage recommandez-vous ?"</div>
+                </div>
+            </div>
+
+            <div class="alert alert-info">
+                <span class="alert-icon">💡</span>
+                <div>
+                    <strong>Plus de 50 autres experts disponibles !</strong><br>
+                    Incluant : Inspecteurs, Avocats, Comptables, Experts LEED, Spécialistes décontamination, et bien plus. Explorez la liste complète dans l'application.
+                </div>
+            </div>
+        </section>
+
+        <!-- Interface de Chat -->
+        <section id="interface-chat">
+            <h2>💬 Comment utiliser l'interface de chat</h2>
+
+            <h3>1. Sélectionner votre expert</h3>
+            <div class="card">
+                <ul>
+                    <li><strong>Sidebar gauche</strong> : Liste alphabétique des 60+ experts</li>
+                    <li><strong>Cliquez sur l'expert</strong> correspondant à votre besoin</li>
+                    <li><strong>L'interface s'adapte</strong> automatiquement au profil sélectionné</li>
+                </ul>
+            </div>
+
+            <h3>2. Poser vos questions</h3>
+            <div class="card">
+                <ul>
+                    <li><strong>Zone de texte</strong> en bas de l'écran</li>
+                    <li><strong>Tapez votre question</strong> naturellement</li>
+                    <li><strong>Appuyez sur Entrée</strong> ou cliquez "Envoyer"</li>
+                    <li><strong>L'expert répond</strong> avec son expertise spécialisée</li>
+                </ul>
+            </div>
+
+            <h3>3. Types de questions efficaces</h3>
+
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h4>✅ Questions Spécifiques</h4>
+                    <pre>"Quel est le coût d'installation d'une thermopompe 3 tonnes ?"
+"Comment calculer la charge de neige pour un toit plat à Montréal ?"
+"Quels documents requis pour permis commercial Ville de Québec ?"</pre>
+                </div>
+
+                <div class="feature-card">
+                    <h4>✅ Questions avec Contexte</h4>
+                    <pre>"Pour une maison 1800 pi² à Sherbrooke, quel système 
+de chauffage recommandez-vous entre gaz naturel et thermopompe ?"
+
+"Je rénove une cuisine de 12x10 pieds, quel budget 
+prévoir pour des armoires de qualité moyenne ?"</pre>
+                </div>
+
+                <div class="feature-card">
+                    <h4>❌ Questions Trop Générales</h4>
+                    <pre style="opacity: 0.7;">"Comment construire une maison ?"
+"Quel est le meilleur matériau ?"
+"Combien ça coûte ?"</pre>
+                </div>
+            </div>
+        </section>
+
+        <!-- Analyse de Documents -->
+        <section id="analyse-documents">
+            <h2>📄 Analyse de documents</h2>
+
+            <h3>1. Types de fichiers supportés</h3>
+            <div class="card">
+                <ul>
+                    <li><strong>PDF</strong> : Plans, devis, rapports d'inspection</li>
+                    <li><strong>DOCX</strong> : Contrats, spécifications, rapports</li>
+                    <li><strong>Images</strong> : JPG, PNG, WebP (photos chantier, plans)</li>
+                    <li><strong>CSV</strong> : Listes de matériaux, budgets</li>
+                    <li><strong>Limite</strong> : 5 MB par image, 20 MB total par requête</li>
+                </ul>
+            </div>
+
+            <h3>2. Comment analyser des documents</h3>
+
+            <div class="workflow">
+                <div class="workflow-step">
+                    <div class="workflow-icon">📤</div>
+                    <h4>Upload</h4>
+                    <p>Glissez-déposez vos fichiers</p>
+                </div>
+                <div class="workflow-step">
+                    <div class="workflow-icon">🔍</div>
+                    <h4>Analyse</h4>
+                    <p>L'expert analyse automatiquement</p>
+                </div>
+                <div class="workflow-step">
+                    <div class="workflow-icon">📊</div>
+                    <h4>Rapport</h4>
+                    <p>Résumé structuré et insights</p>
+                </div>
+            </div>
+
+            <h3>3. Exemples d'analyses par expert</h3>
+
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h4>Entrepreneur + Devis PDF</h4>
+                    <p class="expert-example">"Analysez ce devis et dites-moi si les prix sont raisonnables pour le marché montréalais actuel."</p>
+                </div>
+
+                <div class="feature-card">
+                    <h4>Électricien + Plan électrique</h4>
+                    <p class="expert-example">"Vérifiez ce plan électrique pour conformité au Code et suggérez des améliorations."</p>
+                </div>
+
+                <div class="feature-card">
+                    <h4>Architecte + Photos chantier</h4>
+                    <p class="expert-example">"Évaluez ces photos de fondation et identifiez les problèmes potentiels."</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Recherche Web -->
+        <section id="recherche-web">
+            <h2>🔍 Recherche web intégrée</h2>
+
+            <h3>1. Activer la recherche web</h3>
+            <div class="card">
+                <ul>
+                    <li><strong>Tapez <code>/search</code></strong> suivi de votre requête</li>
+                    <li><strong>Exemple :</strong> <code>/search prix béton prêt Québec 2025</code></li>
+                    <li><strong>L'expert effectue</strong> une recherche web réelle</li>
+                    <li><strong>Résultats intégrés</strong> dans sa réponse spécialisée</li>
+                </ul>
+            </div>
+
+            <h3>2. Types de recherches utiles</h3>
+
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h4>Prix et Matériaux</h4>
+                    <pre>/search coût thermopompe résidentielle Québec 2025
+/search prix lumber 2x4x8 Home Depot Montréal
+/search tarif électricien heure Québec</pre>
+                </div>
+
+                <div class="feature-card">
+                    <h4>Réglementations et Codes</h4>
+                    <pre>/search nouveau code construction Québec 2025
+/search permis rénovation Ville Montréal 2025
+/search subvention efficacité énergétique Québec</pre>
+                </div>
+
+                <div class="feature-card">
+                    <h4>Fournisseurs et Services</h4>
+                    <pre>/search distributeur fenêtres PVC Québec
+/search inspection thermographie Montréal
+/search location équipement construction Laval</pre>
+                </div>
+            </div>
+
+            <h3>3. Avantages de la recherche intégrée</h3>
+            <div class="card">
+                <ul>
+                    <li><strong>Information actualisée</strong> : Données 2025 en temps réel</li>
+                    <li><strong>Expertise contextuelle</strong> : L'expert interprète les résultats</li>
+                    <li><strong>Sources fiables</strong> : Recherche ciblée secteur construction</li>
+                    <li><strong>Gain de temps</strong> : Évite de chercher séparément</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Gestion des Conversations -->
+        <section id="gestion-conversations">
+            <h2>💾 Gestion des conversations</h2>
+
+            <h3>1. Historique automatique</h3>
+            <div class="card">
+                <ul>
+                    <li><strong>Sauvegarde automatique</strong> de toutes vos conversations</li>
+                    <li><strong>Accès rapide</strong> via la sidebar</li>
+                    <li><strong>Recherche par nom</strong> ou date de conversation</li>
+                    <li><strong>Continuité</strong> : Reprenez où vous vous êtes arrêté</li>
+                </ul>
+            </div>
+
+            <h3>2. Organisation des conversations</h3>
+
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h4>Nommage automatique</h4>
+                    <ul>
+                        <li>Génération intelligente basée sur votre première question</li>
+                        <li>Exemple : "Coût maison 2000 pi²..." (auto-généré)</li>
+                        <li>Modification possible en cliquant sur le nom</li>
+                    </ul>
+                </div>
+
+                <div class="feature-card">
+                    <h4>Tri et filtrage</h4>
+                    <ul>
+                        <li>Par date : Plus récent en premier</li>
+                        <li>Par expert : Conversations avec chaque spécialiste</li>
+                        <li>Recherche : Trouvez rapidement une conversation passée</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3>3. Export et partage</h3>
+            <div class="card">
+                <ul>
+                    <li><strong>Export conversations</strong> en format texte ou PDF</li>
+                    <li><strong>Partage avec collègues</strong> : URL ou copie de conversation</li>
+                    <li><strong>Sauvegarde locale</strong> : Téléchargez vos consultations importantes</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Cas d'Usage par Métier -->
+        <section id="cas-metier">
+            <h2>🎯 Cas d'usage par métier</h2>
+
+            <h3>👷 Entrepreneurs Généraux</h3>
+
+            <div class="card">
+                <h4>Estimation de projets</h4>
+                <ol>
+                    <li><strong>Sélectionnez "Entrepreneur Général"</strong></li>
+                    <li><strong>Décrivez votre projet</strong> : type, superficie, finitions</li>
+                    <li><strong>Obtenez une estimation</strong> détaillée par corps de métier</li>
+                    <li><strong>Affinez avec questions</strong> spécifiques (fondation, électricité, etc.)</li>
+                </ol>
+
+                <div class="expert-example">
+                    <strong>Question :</strong> "Estimation complète maison unifamiliale 2200 pi² à Trois-Rivières, finitions milieu de gamme"<br><br>
+                    <strong>Réponse :</strong> Décomposition détaillée:<br>
+                    - Excavation/Fondation: 85,000$<br>
+                    - Structure/Charpente: 95,000$<br>
+                    - Couverture: 25,000$<br>
+                    - Plomberie/Électricité: 45,000$<br>
+                    - etc...<br>
+                    TOTAL: 485,000$ ± 15%
+                </div>
+            </div>
+
+            <h3>🏠 Architectes et Designers</h3>
+
+            <div class="card">
+                <h4>Conformité et optimisation</h4>
+                <ol>
+                    <li><strong>Uploadez vos plans</strong> (PDF/images)</li>
+                    <li><strong>Sélectionnez "Architecte OAQ"</strong></li>
+                    <li><strong>L'expert analyse</strong> conformité codes/règlements</li>
+                    <li><strong>Suggestions d'optimisation</strong> énergétique et spatiale</li>
+                </ol>
+
+                <div class="expert-example">
+                    <strong>Upload :</strong> Plan_Maison_Moderne.pdf<br>
+                    <strong>Question :</strong> "Analysez ce plan pour conformité Code construction Québec"<br><br>
+                    <strong>Réponse :</strong> Analyse détaillée conformité:<br>
+                    ✅ Dimensions pièces conformes<br>
+                    ⚠️ Escalier: Giron insuffisant (prévoir 280mm min)<br>
+                    ❌ Sortie secours sous-sol manquante<br>
+                    + Suggestions d'amélioration...
+                </div>
+            </div>
+
+            <h3>⚡ Électriciens et Plombiers</h3>
+
+            <div class="card">
+                <h4>Dimensionnement et conformité</h4>
+                
+                <div class="expert-example">
+                    <strong>Question :</strong> "Panneau électrique pour maison 2500 pi² avec:<br>
+                    - Thermopompe centrale 4 tonnes<br>
+                    - Chauffe-eau thermopompe<br>
+                    - Borne de recharge auto<br>
+                    - Piscine creusée"<br><br>
+                    <strong>Réponse :</strong> Calcul charge totale:<br>
+                    - Base 2500 pi²: 80A<br>
+                    - Thermopompe: 35A<br>
+                    - Chauffe-eau: 15A<br>
+                    - Borne recharge: 40A<br>
+                    - Piscine: 30A<br>
+                    TOTAL: 200A recommandé (panneau 225A sécuritaire)
+                </div>
+            </div>
+        </section>
+
+        <!-- Conseils Optimisation -->
+        <section id="optimisation">
+            <h2>⚡ Conseils pour optimiser vos consultations</h2>
+
+            <h3>1. Formulation efficace</h3>
+
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h4>✅ Soyez spécifique</h4>
+                    <p style="color: red;">❌ "Combien coûte une rénovation ?"</p>
+                    <p style="color: green;">✅ "Coût rénovation cuisine 10x12 pi, armoires stratifiées, comptoir quartz, région Montréal"</p>
+                </div>
+
+                <div class="feature-card">
+                    <h4>✅ Fournissez le contexte</h4>
+                    <p style="color: red;">❌ "Quelle poutre utiliser ?"</p>
+                    <p style="color: green;">✅ "Poutre pour portée 18 pieds, charge plancher résidentiel, construction neuve, région Québec"</p>
+                </div>
+
+                <div class="feature-card">
+                    <h4>✅ Précisez vos contraintes</h4>
+                    <p style="color: red;">❌ "Meilleur système de chauffage ?"</p>
+                    <p style="color: green;">✅ "Système chauffage maison 1960, 1400 pi², budget 15k$, pas de gaz naturel disponible"</p>
+                </div>
+            </div>
+
+            <h3>2. Utilisation multi-experts</h3>
+
+            <div class="card">
+                <h4>Consultation croisée</h4>
+                <ol>
+                    <li><strong>Commencez avec l'expert principal</strong> pour vue d'ensemble</li>
+                    <li><strong>Consultez les spécialistes</strong> pour détails techniques</li>
+                    <li><strong>Validez avec expert réglementaire</strong> pour conformité</li>
+                    <li><strong>Finalisez avec expert business</strong> pour coûts</li>
+                </ol>
+
+                <div class="expert-example">
+                    <strong>Projet : Extension maison</strong><br><br>
+                    1. Entrepreneur Général → Faisabilité et coût global<br>
+                    2. Architecte → Plans et conformité<br>
+                    3. Ingénieur Structure → Calculs fondation/charpente<br>
+                    4. Électricien → Modifications électriques<br>
+                    5. RBQ & CCQ → Permis requis<br>
+                    6. Agent Immobilier → Impact sur valeur
+                </div>
+            </div>
+        </section>
+
+        <!-- Fonctions Avancées -->
+        <section id="fonctions-avancees">
+            <h2>🚀 Fonctionnalités avancées</h2>
+
+            <h3>1. Templates de questions</h3>
+
+            <div class="card">
+                <h4>Créez vos modèles</h4>
+                <pre>Template Estimation:
+"Estimation [TYPE_PROJET] [SUPERFICIE] à [VILLE], 
+finitions [NIVEAU], inclut [SPÉCIFICITÉS]"
+
+Template Conformité:
+"Vérification conformité [DOCUMENT] selon [CODE/NORME],
+région [LOCALISATION], usage [TYPE]"</pre>
+            </div>
+
+            <h3>2. Intégration workflow</h3>
+
+            <div class="card">
+                <h4>Processus type</h4>
+                <ol>
+                    <li>Analyse de faisabilité (Entrepreneur Général)</li>
+                    <li>Conception détaillée (Architecte/Ingénieur)</li>
+                    <li>Estimation précise (Experts techniques)</li>
+                    <li>Validation réglementaire (RBQ/Inspecteur)</li>
+                    <li>Financement (Comptable/Courtier)</li>
+                    <li>Réalisation (Suivi multi-experts)</li>
+                </ol>
+            </div>
+
+            <h3>3. Veille et mise à jour</h3>
+
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h4>Information continue</h4>
+                    <ul>
+                        <li>Nouveaux codes et réglementations</li>
+                        <li>Évolution prix matériaux et main-d'œuvre</li>
+                        <li>Technologies émergentes construction</li>
+                        <li>Tendances marché immobilier québécois</li>
+                    </ul>
+                </div>
+
+                <div class="feature-card">
+                    <h4>Alertes personnalisées</h4>
+                    <ul>
+                        <li>Changements réglementaires pertinents</li>
+                        <li>Opportunités subventions gouvernementales</li>
+                        <li>Innovations techniques votre secteur</li>
+                        <li>Formation continue disponible</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Résolution de Problèmes -->
+        <section id="resolution-problemes">
+            <h2>🔧 Résolution de problèmes</h2>
+
+            <h3>1. Problèmes d'affichage</h3>
+
+            <div class="card">
+                <h4>Page ne se charge pas</h4>
+                <ul>
+                    <li><strong>Vérifiez votre connexion</strong> internet</li>
+                    <li><strong>Actualisez la page</strong> (F5 ou Ctrl+R)</li>
+                    <li><strong>Videz le cache</strong> du navigateur</li>
+                    <li><strong>Essayez un autre navigateur</strong> (Chrome, Firefox, Safari)</li>
+                </ul>
+            </div>
+
+            <h3>2. Problèmes de fonctionnalité</h3>
+
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h4>Expert ne répond pas</h4>
+                    <ul>
+                        <li>Vérifiez la connexion API</li>
+                        <li>Reformulez votre question</li>
+                        <li>Changez d'expert si besoin</li>
+                        <li>Attendez quelques secondes</li>
+                    </ul>
+                </div>
+
+                <div class="feature-card">
+                    <h4>Upload de documents échoue</h4>
+                    <ul>
+                        <li>Vérifiez la taille (max 5MB/image)</li>
+                        <li>Format supporté uniquement</li>
+                        <li>Connexion stable requise</li>
+                        <li>Réessayez avec fichier plus petit</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3>3. Performance</h3>
+
+            <div class="card">
+                <h4>Réponses lentes</h4>
+                <ul>
+                    <li><strong>Serveurs occupés</strong> : Patientez, système en charge</li>
+                    <li><strong>Questions complexes</strong> : Traitement plus long normal</li>
+                    <li><strong>Documents volumineux</strong> : Analyse prend plus de temps</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Métriques et Suivi -->
+        <section id="metriques">
+            <h2>📊 Métriques et suivi d'utilisation</h2>
+
+            <h3>1. Tableau de bord personnel</h3>
+            <div class="card">
+                <ul>
+                    <li><strong>Conversations totales</strong> : Nombre de consultations</li>
+                    <li><strong>Experts consultés</strong> : Diversité de votre utilisation</li>
+                    <li><strong>Documents analysés</strong> : Volume traité</li>
+                    <li><strong>Questions résolues</strong> : Taux de satisfaction</li>
+                </ul>
+            </div>
+
+            <h3>2. Optimisation utilisation</h3>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h4>Patterns d'usage</h4>
+                    <p>Identifiez vos besoins récurrents et optimisez votre workflow</p>
+                </div>
+                <div class="feature-card">
+                    <h4>Experts sous-utilisés</h4>
+                    <p>Découvrez de nouvelles expertises pour vos projets</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Support et Communauté -->
+        <section id="support-communaute">
+            <h2>📞 Support et communauté</h2>
+
+            <h3>1. Canaux de support</h3>
+
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h4>Auto-assistance</h4>
+                    <ul>
+                        <li>FAQ intégrée</li>
+                        <li>Tutoriels vidéo</li>
+                        <li>Documentation complète</li>
+                        <li>Forum utilisateurs</li>
+                    </ul>
+                </div>
+
+                <div class="feature-card">
+                    <h4>Support direct</h4>
+                    <ul>
+                        <li>Chat support technique</li>
+                        <li>Email : support@experts-ia.ca</li>
+                        <li>Support téléphonique entreprises</li>
+                        <li>Formation sur site disponible</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3>2. Communauté utilisateurs</h3>
+
+            <div class="card">
+                <h4>Groupes régionaux</h4>
+                <ul>
+                    <li><strong>Montréal</strong> : Rencontres mensuelles utilisateurs</li>
+                    <li><strong>Québec</strong> : Ateliers formation avancée</li>
+                    <li><strong>Régions</strong> : Webinaires spécialisés</li>
+                    <li><strong>International</strong> : Communauté francophone</li>
+                </ul>
+            </div>
+
+            <div class="alert alert-success">
+                <span class="alert-icon">🏆</span>
+                <div>
+                    <strong>Avec EXPERTS IA, vous avez désormais accès à l'expertise de 60+ professionnels de la construction québécoise, disponible 24/7 pour faire de vos projets des réussites !</strong>
+                </div>
+            </div>
+
+            <!-- Footer -->
+            <div style="margin-top: 4rem; padding-top: 2rem; border-top: 2px solid var(--border-color); text-align: center; color: var(--text-secondary);">
+                <p><strong>© 2025 EXPERTS IA - Tous droits réservés</strong></p>
+                <p>Version du manuel : 3.0 - Janvier 2025</p>
+                <p>Support : support@experts-ia.ca | Communauté : https://discord.gg/experts-ia</p>
+            </div>
+        </section>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        // Navigation active link
+        const navLinks = document.querySelectorAll('.nav-link');
+        const sections = document.querySelectorAll('section');
+
+        function setActiveLink() {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (pageYOffset >= sectionTop - 100) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').substring(1) === current) {
+                    link.classList.add('active');
+                }
+            });
+        }
+
+        window.addEventListener('scroll', setActiveLink);
+
+        // Search functionality
+        const searchInput = document.getElementById('searchInput');
+        searchInput.addEventListener('input', function(e) {
+            const searchTerm = e.target.value.toLowerCase();
+            const allSections = document.querySelectorAll('section');
+            
+            allSections.forEach(section => {
+                const text = section.textContent.toLowerCase();
+                if (text.includes(searchTerm)) {
+                    section.style.display = 'block';
+                } else {
+                    section.style.display = 'none';
+                }
+            });
+        });
+
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Print functionality
+        window.addEventListener('beforeprint', function() {
+            document.body.classList.add('printing');
+        });
+
+        window.addEventListener('afterprint', function() {
+            document.body.classList.remove('printing');
+        });
+
+        // Mobile menu toggle
+        const mobileMenuToggle = document.createElement('button');
+        mobileMenuToggle.innerHTML = '☰';
+        mobileMenuToggle.style.cssText = `
+            display: none;
+            position: fixed;
+            top: 1rem;
+            left: 1rem;
+            z-index: 1000;
+            padding: 0.5rem;
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 0.5rem;
+            font-size: 1.5rem;
+            cursor: pointer;
+        `;
+
+        document.body.appendChild(mobileMenuToggle);
+
+        mobileMenuToggle.addEventListener('click', function() {
+            const sidebar = document.getElementById('sidebar');
+            sidebar.classList.toggle('active');
+        });
+
+        // Show mobile menu button on small screens
+        function checkMobile() {
+            if (window.innerWidth <= 768) {
+                mobileMenuToggle.style.display = 'block';
+            } else {
+                mobileMenuToggle.style.display = 'none';
+                document.getElementById('sidebar').classList.remove('active');
+            }
+        }
+
+        window.addEventListener('resize', checkMobile);
+        checkMobile();
+
+        // Initialize
+        setActiveLink();
+    </script>
+</body>
+</html>
